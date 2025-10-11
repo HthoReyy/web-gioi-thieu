@@ -4,7 +4,6 @@
   <meta charset="utf-8" />
   <title>Giới thiệu bản thân</title>
   <link rel="stylesheet" type="text/css" href="styles.css">
-  
 </head>
 <body>
   <nav class="site-nav">
@@ -12,14 +11,13 @@
     <a href="#giao-luu">Gửi thông tin & liên hệ</a>
   </nav>
 
-  <!-- Câu 1-->
   <h1 style="color: #CAEDFF;">Giới thiệu bản thân</h1>  
-  <!-- Câu 2 -->
+
   <div id="gioi-thieu-ban-than" class="section">
     <h2 style="color: #D8B4F8;">Thông tin cơ bản</h2>
 
-    <!-- Câu 4-->
-    <img src="pic.jpg" alt="Ảnh đại diện" width="150" height="150"
+    <!-- thêm id="avatar" để JS xử lý hiệu ứng -->
+    <img id="avatar" src="pic.jpg" alt="Ảnh đại diện" width="150" height="150"
          style="display:block;margin:0 auto;border-radius:50%;" />
 
     <ul>
@@ -29,7 +27,6 @@
     </ul>
 
     <h2 style="color: #D8B4F8;">Sở thích</h2>
-    <!-- Câu 3 -->
       <strong>Món ăn</strong>
         <ol>
           <li>Phở</li>
@@ -50,28 +47,28 @@
       </ol>
 
     <h2 style="color: #D8B4F8;">Mục tiêu của bản thân</h2>
-    <table border="1" cellspacing="0" cellpadding="8">
-  <tr>
-    <th>Mục tiêu</th>
-    <th>Thời hạn</th>
-    <th>Hoàn thành</th>
-  </tr>
-  <tr>
-    <td>Trung bình điểm môn web đạt 8.0</td>
-    <td>29/11/2025</td>
-    <td><input type="checkbox"></td>
-  </tr>
-  <tr>
-    <td>Đạt chứng chỉ ngoại ngữ đủ chuẩn tốt nghiệp</td>
-    <td>23/08/2023</td>
-    <td><input type="checkbox"></td>
-  </tr>
-  <tr>
-    <td>Chọn được công ty với vị trí Business Analyst</td>
-    <td>01/01/2027</td>
-    <td><input type="checkbox"></td>
-  </tr>
-</table>
+    <table border="1" cellspacing="0" cellpadding="8" id="goals-table">
+      <tr>
+        <th>Mục tiêu</th>
+        <th>Thời hạn</th>
+        <th>Hoàn thành</th>
+      </tr>
+      <tr>
+        <td>Trung bình điểm môn web đạt 8.0</td>
+        <td>29/11/2025</td>
+        <td><input type="checkbox" class="goal-checkbox"></td>
+      </tr>
+      <tr>
+        <td>Đạt chứng chỉ ngoại ngữ đủ chuẩn tốt nghiệp</td>
+        <td>23/08/2023</td>
+        <td><input type="checkbox" class="goal-checkbox"></td>
+      </tr>
+      <tr>
+        <td>Chọn được công ty với vị trí Business Analyst</td>
+        <td>01/01/2027</td>
+        <td><input type="checkbox" class="goal-checkbox"></td>
+      </tr>
+    </table>
   </div>
 
   <div id="giao-luu" class="section">
@@ -80,35 +77,44 @@
     <p>Email: <a href="mailto:23521517@gm.uit.edu.vn">23521517@gm.uit.edu.vn</a></p>
 
     <h4>Hoặc để lại lời nhắn</h4>
-    <form>
-      <label>Họ tên:
-        <label><br><br>
-        <input type="text" name="name" required>
+    <!-- thêm id cho form và các input -->
+    <form id="contactForm" novalidate>
+      <label>Họ tên:<br>
+        <input type="text" id="name" name="name" required>
       </label><br><br>
-      <label>Email:
-        <label><br><br>
-        <input type="email" name="email" required>
+
+      <label>Email:<br>
+        <input type="email" id="email" name="email" required>
       </label><br><br>
-      <label>Lời nhắn:
-        <label><br><br>
-        <textarea name="message" rows="4" cols="40" required></textarea>
+
+      <label>Lời nhắn:<br>
+        <textarea id="message" name="message" rows="4" cols="40" required></textarea>
       </label><br><br>
-      <label>Giới tính:
-        <label><br><br>
+
+      <label>Giới tính:<br>
         <input type="radio" name="gender" value="male" required> Nam
         <input type="radio" name="gender" value="female" required> Nữ
       </label><br><br>
-      <label>Sở thích:
-        <label><br><br>
+
+      <label>Sở thích:<br>
         <input type="checkbox" name="hobby" value="reading"> Đọc sách
         <input type="checkbox" name="hobby" value="traveling"> Du lịch
         <input type="checkbox" name="hobby" value="gaming"> Chơi game
       </label><br><br>
+
+      <p id="formError" class="error" style="color:red;"></p>
       <button type="submit">Gửi</button>
     </form>
   </div>
-<footer class="site-footer">
+
+  <footer class="site-footer">
     <p>@2025 23521517 Đặng Hữu Thọ</p>
   </footer>
+
+  <!-- nút lên đầu trang -->
+  <button id="backToTop" title="Lên đầu trang">↑</button>
+
+  <!-- liên kết file JS -->
+  <script src="script.js"></script>
 </body>
 </html>
